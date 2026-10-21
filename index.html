@@ -1,0 +1,1304 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Tita, With Love ♡</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap");
+
+      :root {
+        --pink: #ff70b8;
+        --light-pink: #ffe1f0;
+        --deep-pink: #d63384;
+        --rose: #a82d68;
+        --cream: #fff8fc;
+        --text: #68445a;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Nunito", sans-serif;
+        background: #ff8bbd;
+        color: var(--text);
+        padding: 20px 12px;
+        overflow-x: hidden;
+      }
+
+      button,
+      a {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      button {
+        font-family: inherit;
+      }
+
+      .page {
+        max-width: 1050px;
+        margin: auto;
+        background: white;
+        border-radius: 25px;
+        overflow: hidden;
+        box-shadow: 0 15px 60px #8b174d30;
+        position: relative;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        padding: 20px 6%;
+        background: white;
+      }
+
+      .logo {
+        font-family: "Playfair Display", serif;
+        font-size: 20px;
+        color: var(--deep-pink);
+        font-weight: bold;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #a45e80;
+        font-size: 12px;
+        font-weight: 800;
+        margin-left: 17px;
+      }
+
+      nav a:hover {
+        color: var(--pink);
+      }
+
+      /* HERO */
+
+      .hero {
+        background: linear-gradient(135deg, #ffb8db, #ff73b9 48%, #ed3f98);
+        padding: 60px 7%;
+        min-height: 430px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 25px;
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+      }
+
+      .hero::before,
+      .hero::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        background: #ffffff16;
+        z-index: -1;
+      }
+
+      .hero::before {
+        width: 340px;
+        height: 340px;
+        right: -40px;
+        top: -110px;
+      }
+
+      .hero::after {
+        width: 250px;
+        height: 250px;
+        right: 90px;
+        bottom: -160px;
+      }
+
+      .hero-content {
+        max-width: 550px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .eyebrow {
+        color: white;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: 800;
+        margin-bottom: 17px;
+      }
+
+      h1 {
+        color: white;
+        font-family: "Playfair Display", serif;
+        font-size: clamp(36px, 5vw, 59px);
+        line-height: 1.12;
+        margin-bottom: 18px;
+        text-shadow: 0 3px 18px #a51c6130;
+      }
+
+      .hero p {
+        color: white;
+        line-height: 1.9;
+        font-size: 14px;
+        max-width: 450px;
+      }
+
+      .pill {
+        display: inline-block;
+        background: #ffffff35;
+        border: 1px solid #ffffff65;
+        border-radius: 30px;
+        padding: 9px 16px;
+        color: white;
+        font-size: 11px;
+        margin-top: 20px;
+      }
+
+      .main-button {
+        border: none;
+        background: white;
+        color: var(--deep-pink);
+        padding: 13px 23px;
+        border-radius: 30px;
+        font-weight: 800;
+        font-size: 12px;
+        cursor: pointer;
+        margin-top: 22px;
+        box-shadow: 0 5px 20px #9b175b25;
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
+      }
+
+      .main-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 28px #9b175b45;
+      }
+
+      /* GLOWING PINK PHOENIX */
+
+      .phoenix-wrap {
+        width: 320px;
+        min-width: 260px;
+        aspect-ratio: 1;
+        position: relative;
+        display: grid;
+        place-items: center;
+      }
+
+      .phoenix-halo {
+        position: absolute;
+        width: 83%;
+        height: 83%;
+        border-radius: 50%;
+        background: #ffdef1;
+        box-shadow:
+          0 0 25px #fff,
+          0 0 55px #ffb9e0,
+          0 0 100px #ff65c5;
+        animation: haloPulse 3s ease-in-out infinite alternate;
+      }
+
+      .phoenix-art {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        overflow: visible;
+        filter: drop-shadow(0 0 7px #fff) drop-shadow(0 0 15px #ff44b7);
+        animation: phoenixFloat 3.5s ease-in-out infinite;
+      }
+
+      .phoenix-art .wing {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: wingGlow 2.5s ease-in-out infinite alternate;
+      }
+
+      @keyframes phoenixFloat {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-2deg);
+        }
+        50% {
+          transform: translateY(-12px) rotate(2deg);
+        }
+      }
+
+      @keyframes haloPulse {
+        from {
+          transform: scale(0.94);
+          opacity: 0.75;
+        }
+        to {
+          transform: scale(1.04);
+          opacity: 1;
+        }
+      }
+
+      @keyframes wingGlow {
+        from {
+          opacity: 0.8;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .phoenix-caption {
+        position: absolute;
+        bottom: -3px;
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-shadow: 0 0 10px #bd176d;
+        z-index: 3;
+      }
+
+      /* SECTION STYLING */
+
+      .section {
+        padding: 55px 7%;
+      }
+
+      .section-heading {
+        text-align: center;
+        margin-bottom: 32px;
+      }
+
+      .section-heading h2 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(27px, 4vw, 37px);
+        color: var(--rose);
+        margin-bottom: 10px;
+      }
+
+      .section-heading p {
+        color: #a67b93;
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      .underline {
+        width: 55px;
+        height: 3px;
+        background: var(--pink);
+        border-radius: 5px;
+        margin: 15px auto 0;
+      }
+
+      /* GRATITUDE CARDS */
+
+      .gratitude-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 17px;
+      }
+
+      .gratitude-card {
+        background: linear-gradient(145deg, #fff7fb, #fff);
+        border: 1px solid #ffe0ef;
+        border-radius: 17px;
+        padding: 23px 18px;
+        text-align: center;
+        transition: 0.3s;
+      }
+
+      .gratitude-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 30px #e957a51b;
+      }
+
+      .card-icon {
+        font-size: 33px;
+        margin-bottom: 13px;
+      }
+
+      .gratitude-card h3 {
+        color: var(--rose);
+        font-family: "Playfair Display", serif;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .gratitude-card p {
+        color: #98758a;
+        font-size: 12px;
+        line-height: 1.9;
+      }
+
+      /* LETTER */
+
+      .letter-section {
+        background: linear-gradient(140deg, #fff1f8, #fffafd);
+        padding: 60px 7%;
+      }
+
+      .letter {
+        max-width: 760px;
+        margin: auto;
+        background: white;
+        border: 1px solid #f9cbe2;
+        border-radius: 20px;
+        padding: clamp(24px, 5vw, 48px);
+        box-shadow: 0 12px 35px #a7336910;
+        position: relative;
+      }
+
+      .letter-top {
+        text-align: center;
+        font-size: 35px;
+        margin-bottom: 12px;
+        animation: gentleHeart 2s infinite;
+      }
+
+      @keyframes gentleHeart {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.08);
+        }
+      }
+
+      .letter h2 {
+        font-family: "Playfair Display", serif;
+        text-align: center;
+        font-size: clamp(25px, 4vw, 33px);
+        color: var(--rose);
+        margin-bottom: 28px;
+      }
+
+      .letter p {
+        font-size: 14px;
+        line-height: 2;
+        color: #76556b;
+        margin-bottom: 17px;
+      }
+
+      .letter .salutation {
+        color: var(--deep-pink);
+        font-weight: 800;
+      }
+
+      .letter .signature {
+        font-family: "Playfair Display", serif;
+        font-size: 21px;
+        color: var(--rose);
+        margin-top: 25px;
+        margin-bottom: 0;
+      }
+
+      /* PHOTO GALLERY */
+
+      .gallery-section {
+        background: white;
+      }
+
+      .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 15px;
+      }
+
+      .photo-card {
+        background: #fff8fc;
+        border: 1px solid #ffe2ef;
+        border-radius: 14px;
+        padding: 7px;
+        box-shadow: 0 4px 15px #ac376e0b;
+        transition: 0.3s;
+        cursor: pointer;
+        min-width: 0;
+      }
+
+      .photo-card:hover {
+        transform: translateY(-5px) rotate(-0.5deg);
+        box-shadow: 0 10px 25px #ac376e1c;
+      }
+
+      .photo-card img {
+        display: block;
+        width: 100%;
+        height: 175px;
+        border-radius: 10px;
+        object-fit: cover;
+        background: linear-gradient(135deg, #ffd7eb, #ffb8d7);
+      }
+
+      .photo-caption {
+        text-align: center;
+        color: var(--rose);
+        font-size: 11px;
+        font-weight: 800;
+        padding: 11px 3px 7px;
+      }
+
+      .photo-card .missing {
+        display: none;
+        height: 175px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #ffd7eb, #ffb8d7);
+        color: #a72f70;
+        font-size: 12px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+        line-height: 1.8;
+      }
+
+      .photo-card img.broken {
+        display: none;
+      }
+      .photo-card img.broken + .missing {
+        display: flex;
+      }
+
+      /* PROMISE */
+
+      .promise {
+        padding: 60px 8%;
+        text-align: center;
+        background: linear-gradient(135deg, #ffb8dc, #ed65ad, #dc4192);
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .promise h2 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(27px, 4vw, 39px);
+        margin-bottom: 17px;
+      }
+
+      .promise p {
+        max-width: 660px;
+        margin: auto;
+        font-size: 14px;
+        line-height: 2;
+      }
+
+      .promise .main-button {
+        margin-top: 25px;
+      }
+
+      .hidden-note {
+        display: none;
+        max-width: 570px;
+        margin: 25px auto 0;
+        padding: 22px;
+        background: #ffffffed;
+        color: var(--rose);
+        border-radius: 16px;
+        line-height: 1.9;
+        font-size: 13px;
+      }
+
+      .hidden-note.show {
+        display: block;
+        animation: appear 0.5s ease;
+      }
+
+      @keyframes appear {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      footer {
+        background: white;
+        text-align: center;
+        padding: 24px 15px;
+        color: #a77d95;
+        font-size: 11px;
+        line-height: 2;
+      }
+
+      footer span {
+        color: var(--deep-pink);
+      }
+
+      /* FLOATING HEARTS */
+
+      #heart-layer {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 90;
+        overflow: hidden;
+      }
+
+      .floating-heart {
+        position: absolute;
+        bottom: -30px;
+        animation: floatUp 4s ease-in forwards;
+      }
+
+      @keyframes floatUp {
+        to {
+          transform: translateY(-110vh) rotate(35deg);
+          opacity: 0;
+        }
+      }
+
+      /* ENLARGED PHOTO */
+
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: #351025ed;
+        padding: 20px;
+      }
+
+      .lightbox.show {
+        display: flex;
+      }
+
+      .lightbox img {
+        max-width: 92%;
+        max-height: 83vh;
+        object-fit: contain;
+        border-radius: 12px;
+        box-shadow: 0 0 30px #ff8ac8;
+      }
+
+      .close-btn {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 43px;
+        height: 43px;
+        border: none;
+        border-radius: 50%;
+        background: white;
+        color: var(--rose);
+        font-size: 26px;
+        cursor: pointer;
+      }
+
+      .back-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        border: none;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        background: #e94b9d;
+        color: white;
+        font-size: 19px;
+        cursor: pointer;
+        box-shadow: 0 4px 18px #8d174c3b;
+        z-index: 40;
+      }
+
+      @media (max-width: 760px) {
+        body {
+          padding: 8px;
+        }
+
+        .hero {
+          padding: 40px 6%;
+          min-height: 360px;
+        }
+
+        .phoenix-wrap {
+          width: 230px;
+          min-width: 180px;
+        }
+
+        .gratitude-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .gratitude-card {
+          max-width: 480px;
+          width: 100%;
+          margin: auto;
+        }
+
+        .photo-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .photo-card img,
+        .photo-card .missing {
+          height: 220px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        nav {
+          padding: 17px 5%;
+        }
+        .logo {
+          font-size: 16px;
+        }
+        nav a {
+          font-size: 10px;
+          margin-left: 8px;
+        }
+
+        .hero {
+          flex-direction: column;
+          text-align: center;
+          padding: 35px 7% 40px;
+        }
+
+        .hero-content {
+          max-width: 100%;
+        }
+        .hero p {
+          margin: auto;
+        }
+        .phoenix-wrap {
+          width: 210px;
+          min-width: 0;
+        }
+        .phoenix-caption {
+          bottom: -8px;
+        }
+
+        .section {
+          padding: 42px 5%;
+        }
+        .letter-section {
+          padding: 40px 5%;
+        }
+
+        .photo-grid {
+          gap: 10px;
+        }
+
+        .photo-card img,
+        .photo-card .missing {
+          height: 165px;
+        }
+
+        .photo-caption {
+          font-size: 10px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="heart-layer"></div>
+
+    <div class="page">
+      <nav>
+        <div class="logo">For Tita, With Love ♡</div>
+        <div>
+          <a href="#home">Home</a>
+          <a href="#letter">My Message</a>
+          <a href="#memories">Memories</a>
+        </div>
+      </nav>
+
+      <!-- HERO WITH GLOWING PINK PHOENIX -->
+      <header class="hero" id="home">
+        <div class="hero-content">
+          <div class="eyebrow">A message from my heart</div>
+
+          <h1>Thank You, Tita! 💗</h1>
+
+          <p>
+            To a wonderful mother who raised someone so special to me. Thank you
+            for your kindness, your warm words, and for making me feel like I am
+            becoming part of your beautiful family.
+          </p>
+
+          <div class="pill">Made with gratitude, love & faith ♡</div>
+          <br />
+
+          <button class="main-button" onclick="goToLetter()">
+            Read My Heartfelt Letter 💌
+          </button>
+        </div>
+
+        <div class="phoenix-wrap" aria-label="Glowing pink phoenix">
+          <div class="phoenix-halo"></div>
+
+          <!-- Original phoenix illustration made with SVG -->
+          <svg
+            class="phoenix-art"
+            viewBox="0 0 320 330"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="A glowing pink phoenix"
+          >
+            <defs>
+              <linearGradient id="feather" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#fff9ff" />
+                <stop offset="45%" stop-color="#ffb2e1" />
+                <stop offset="100%" stop-color="#ed3b9e" />
+              </linearGradient>
+
+              <linearGradient id="hotpink" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#fff0fc" />
+                <stop offset="100%" stop-color="#ff64bd" />
+              </linearGradient>
+            </defs>
+
+            <!-- Tail feathers -->
+            <g class="wing" stroke="#ff83cb" stroke-width="2">
+              <path
+                d="M151 188 Q91 233 76 300 Q128 276 159 218"
+                fill="url(#feather)"
+              />
+              <path
+                d="M162 194 Q125 253 132 314 Q168 274 175 220"
+                fill="url(#hotpink)"
+              />
+              <path
+                d="M171 194 Q171 257 199 303 Q210 249 184 213"
+                fill="url(#feather)"
+              />
+              <path
+                d="M182 188 Q217 235 245 267 Q246 218 194 187"
+                fill="url(#hotpink)"
+              />
+            </g>
+
+            <!-- Left sweeping wing -->
+            <g class="wing" stroke="#ff70bd" stroke-width="2">
+              <path
+                d="M155 174 Q91 123 27 48 Q47 113 90 158
+                             Q54 143 14 122 Q42 182 124 204 Z"
+                fill="url(#feather)"
+              />
+              <path
+                d="M135 174 Q80 125 53 82 Q67 142 121 193 Z"
+                fill="#ff8fce"
+              />
+              <path
+                d="M115 184 Q63 177 36 151 Q73 198 133 207 Z"
+                fill="#ffe9fa"
+              />
+            </g>
+
+            <!-- Right sweeping wing -->
+            <g class="wing" stroke="#ff70bd" stroke-width="2">
+              <path
+                d="M174 174 Q232 122 293 44 Q277 110 232 159
+                             Q270 142 307 122 Q282 183 201 205 Z"
+                fill="url(#feather)"
+              />
+              <path
+                d="M194 175 Q249 123 270 82 Q257 142 207 194 Z"
+                fill="#ff8fce"
+              />
+              <path
+                d="M212 185 Q261 175 287 151 Q252 198 195 207 Z"
+                fill="#ffe9fa"
+              />
+            </g>
+
+            <!-- Body -->
+            <path
+              d="M161 130
+                         C139 148 133 176 151 204
+                         Q160 218 171 204
+                         C191 178 184 149 161 130 Z"
+              fill="url(#hotpink)"
+              stroke="#ff72bd"
+              stroke-width="2"
+            />
+
+            <!-- Neck -->
+            <path
+              d="M158 157 Q140 131 150 108
+                         Q164 124 166 140
+                         Q178 119 185 110
+                         Q190 139 169 163 Z"
+              fill="#fff3fd"
+              stroke="#ff8bd0"
+              stroke-width="2"
+            />
+
+            <!-- Head -->
+            <circle
+              cx="162"
+              cy="103"
+              r="20"
+              fill="#fff5fd"
+              stroke="#ff77c2"
+              stroke-width="2"
+            />
+
+            <!-- Crown feathers -->
+            <path
+              d="M146 92 Q128 67 143 49 Q151 70 160 81
+                         Q155 54 174 38 Q173 70 169 85
+                         Q185 63 195 58 Q188 84 177 97"
+              fill="url(#feather)"
+              stroke="#ff71be"
+              stroke-width="2"
+            />
+
+            <!-- Beak -->
+            <path d="M181 104 L201 110 L181 115 Z" fill="#ff80b5" />
+
+            <!-- Eyes -->
+            <circle cx="168" cy="100" r="2.5" fill="#b62a75" />
+            <circle cx="169" cy="99" r=".8" fill="white" />
+
+            <!-- Chest heart -->
+            <path
+              d="M160 177
+                         C147 165 136 178 145 188
+                         L160 201 L175 188
+                         C185 177 173 165 160 177 Z"
+              fill="#fffaff"
+              opacity=".95"
+            />
+
+            <!-- Sparkles -->
+            <g fill="white">
+              <path
+                d="M54 64 L58 75 L69 79 L58 83 L54 95 L50 83 L39 79 L50 75 Z"
+              />
+              <path
+                d="M260 91 L263 99 L271 102 L263 105 L260 113 L257 105 L249 102 L257 99 Z"
+              />
+              <path
+                d="M228 39 L231 47 L239 50 L231 53 L228 61 L225 53 L217 50 L225 47 Z"
+              />
+              <circle cx="91" cy="54" r="3" />
+              <circle cx="235" cy="138" r="3" />
+              <circle cx="102" cy="244" r="3" />
+              <circle cx="223" cy="233" r="4" />
+            </g>
+          </svg>
+
+          <div class="phoenix-caption">A HEART FULL OF GRATITUDE ✨</div>
+        </div>
+      </header>
+
+      <!-- APPRECIATION CARDS -->
+      <section class="section">
+        <div class="section-heading">
+          <h2>Three Things I Want You to Know</h2>
+          <p>Some words I truly mean, from the bottom of my heart.</p>
+          <div class="underline"></div>
+        </div>
+
+        <div class="gratitude-grid">
+          <article class="gratitude-card">
+            <div class="card-icon">🌷</div>
+            <h3>Thank You for Julie</h3>
+            <p>
+              Thank you for raising such a wonderful daughter, Tita. Julie has
+              brought so much happiness into my life, and I am grateful to God
+              and to you for the person she has become.
+            </p>
+          </article>
+
+          <article class="gratitude-card">
+            <div class="card-icon">🤍</div>
+            <h3>Thank You for Welcoming Me</h3>
+            <p>
+              Even though we have only recently gotten to know each other, your
+              kindness and warm message mean so much to me, Tita. I am grateful
+              to be welcomed with such a sincere heart.
+            </p>
+          </article>
+
+          <article class="gratitude-card">
+            <div class="card-icon">🙏</div>
+            <h3>Thank You, God</h3>
+            <p>
+              I believe blessings are not only measured by finances or material
+              things. Sometimes, God blesses us by sending wonderful people into
+              our lives. I am thankful He allowed our paths to meet.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- PERSONAL LETTER TO TITA -->
+      <section class="letter-section" id="letter">
+        <div class="letter">
+          <div class="letter-top">💌</div>
+
+          <h2>A Letter for you Tita</h2>
+
+          <p class="salutation">Dear Tita, 🤍</p>
+
+          <p>
+            I just want to take a little time to thank you sincerely, Tita.
+            Thank you for your beautiful message and for the kindness you have
+            shown me. Honestly, bisan bag o pa lang kita nagkilalahay, I already
+            feel grateful nga nakilala ko kamo. Your words touched my heart, and
+            I truly appreciate how you welcomed me and considered me as part of
+            your family.
+          </p>
+
+          <p>
+            Most of all, Tita, thank you for Julie. Thank you for raising a
+            daughter who has brought so much happiness into my life. I
+            appreciate her more than words can explain, and I am thankful for
+            every moment I get to spend with her. The kindness she shows, the
+            efforts she makes, and the love she shares mean so much to me. I
+            know that behind the wonderful person she is today is a mother who
+            has loved, guided, and cared for her. For that, I will always be
+            grateful to you.
+          </p>
+
+          <p>
+            I also want to thank you for your encouraging words about being part
+            of your family. It means a lot to me, Tita. I believe that blessings
+            are not only seen through finances or material things. Sometimes,
+            God blesses us through the people He brings into our lives, through
+            the kindness we receive, and through the relationships that help us
+            grow. I feel blessed that God allowed me to meet Julie and get to
+            know your family.
+          </p>
+
+          <p>
+            I know that life will not always be easy. There may be days when
+            things go well and days when we face challenges, misunderstandings,
+            or struggles. But I pray that God will always guide us, give us
+            wisdom, and teach us to remain patient, humble, and faithful. As you
+            said, He is the source of everything, and I believe that keeping Him
+            at the center of our lives will help us face whatever comes our way.
+          </p>
+
+          <p>
+            Tita, I want you to know that I will do my best to take care of
+            Julie, respect her, support her dreams, listen to her, and treat her
+            with the love and sincerity she deserves. I know I still have a lot
+            to learn and many ways to grow, but I want my actions to show that
+            my intentions toward her are genuine. I will also remember what you
+            said about taking care of myself, because I know that becoming a
+            better person is part of learning how to love others well.
+          </p>
+
+          <p>
+            I pray that God blesses you and your entire family with good health,
+            peace, happiness, and abundant grace. May He always protect your
+            home, strengthen your faith, provide for your needs, and guide you
+            through every season of life. I hope that we will continue building
+            a good relationship filled with respect, understanding, and love.
+          </p>
+
+          <p>
+            Thank you again, Tita, for your kindness, your acceptance, and your
+            heartfelt prayers. I may not always know the perfect words to
+            express my gratitude, but please know that I sincerely appreciate
+            you. I am happy that I got to know you, and I hope to create more
+            beautiful memories with Julie and your family in the days to come.
+          </p>
+
+          <p>
+            May God continue to bless you, Tita, and keep our families under His
+            loving protection. I will always be thankful for the beautiful
+            people He has placed in my life.
+          </p>
+
+          <p class="signature">
+            With respect, love, and a grateful heart,<br />
+            James 🤍
+          </p>
+        </div>
+      </section>
+
+      <!-- TEN PHOTOS -->
+      <section class="section gallery-section" id="memories">
+        <div class="section-heading">
+          <h2>Our Little World Together 💗</h2>
+          <p>
+            Ten little windows into our story. Every picture holds a moment I am
+            thankful for.
+          </p>
+          <div class="underline"></div>
+        </div>
+
+        <div class="photo-grid">
+          <div class="photo-card" onclick="openPhoto(0)">
+            <img
+              src="images/us1.jpg"
+              alt="Memory one"
+              onerror="this.classList.add('broken')"
+            />
+            <div class="missing">
+              💗<br />Add your first picture<br />images/us1.jpg
+            </div>
+            <div class="photo-caption">My Favorite Person ♡</div>
+          </div>
+
+          <div class="photo-card" onclick="openPhoto(1)">
+            <img
+              src="images/us2.jpg"
+              alt="Memory two"
+              onerror="this.classList.add('broken')"
+            />
+            <div class="missing">
+              🌷<br />Add your second picture<br />images/us2.jpg
+            </div>
+            <div class="photo-caption">A Sweet Memory ♡</div>
+          </div>
+
+          <div class="photo-card" onclick="openPhoto(2)">
+            <img
+              src="images/us3.jpg"
+              alt="Memory three"
+              onerror="this.classList.add('broken')"
+            />
+            <div class="missing">
+              ✨<br />Add your third picture<br />images/us3.jpg
+            </div>
+            <div class="photo-caption">Us Being Us ♡</div>
+          </div>
+
+          <div class="photo-card" onclick="openPhoto(3)">
+            <img
+              src="images/us4.jpg"
+              alt="Memory four"
+              onerror="this.classList.add('broken')"
+            />
+            <div class="missing">
+              💕<br />Add your fourth picture<br />images/us4.jpg
+            </div>
+            <div class="photo-caption">Our Happy Place ♡</div>
+          </div>
+
+          <div class="photo-card" onclick="openPhoto(4)">
+            <img
+              src="images/us5.jpg"
+              alt="Memory five"
+              onerror="this.classList.add('broken')"
+            />
+            <div class="missing">
+              🦋<br />Add your fifth picture<br />images/us5.jpg
+            </div>
+            <div class="photo-caption">Another Beautiful Day ♡</div>
+          </div>
+
+          <div class="photo-card" onclick="openPhoto(5)">
+            <img
+              src="images/us6.jpg"
+              alt="Memory six"
+              onerror="this.classList.add('broken')"
+            />
+            <div class="missing">
+              💖<br />Add your sixth picture<br />images/us6.jpg
+            </div>
+            <div class="photo-caption">A Moment to Keep ♡</div>
+          </div>
+
+          <div class="photo-card" onclick="openPhoto(6)">
+            <img
+              src="images/us7.jpg"
+              alt="Memory seven"
+              onerror="this.classList.add('broken')"
+            />
+            <div class="missing">
+              🌸<br />Add your seventh picture<br />images/us7.jpg
+            </div>
+            <div class="photo-caption">Together Is Better ♡</div>
+          </div>
+
+          <div class="photo-card" onclick="openPhoto(7)">
+            <img
+              src="images/us8.jpg"
+              alt="Memory eight"
+              onerror="this.classList.add('broken')"
+            />
+            <div class="missing">
+              🩷<br />Add your eighth picture<br />images/us8.jpg
+            </div>
+            <div class="photo-caption">My Favorite Smile ♡</div>
+          </div>
+
+          <div class="photo-card" onclick="openPhoto(8)">
+            <img
+              src="images/us9.jpg"
+              alt="Memory nine"
+              onerror="this.classList.add('broken')"
+            />
+            <div class="missing">
+              🌹<br />Add your ninth picture<br />images/us9.jpg
+            </div>
+            <div class="photo-caption">Our Growing Story ♡</div>
+          </div>
+
+          <div class="photo-card" onclick="openPhoto(9)">
+            <img
+              src="images/us10.jpg"
+              alt="Memory ten"
+              onerror="this.classList.add('broken')"
+            />
+            <div class="missing">
+              💍<br />Add your tenth picture<br />images/us10.jpg
+            </div>
+            <div class="photo-caption">More Memories Ahead ♡</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL MESSAGE -->
+      <section class="promise">
+        <h2>One Family, Guided by God 🙏🏻</h2>
+
+        <p>
+          Tita, thank you for welcoming me with such a kind heart. I hope to
+          keep earning your trust through my actions, respect your family, and
+          take good care of Julie. May God continue to guide all of us,
+          especially during life's difficult moments, and may our families
+          always remain under His protection. Your kindness is a blessing I will
+          never take for granted. 🤍
+        </p>
+
+        <button class="main-button" onclick="showBlessing()">
+          A Little Prayer for Our Families 🙏
+        </button>
+
+        <div class="hidden-note" id="blessing">
+          Dear Heavenly Father, thank You for the people You bring into our
+          lives. Thank You for Julie, her mother, and their family. Please bless
+          their home with peace, protect them from harm, provide for their
+          needs, and give them strength during every challenge. Teach us to love
+          sincerely, forgive patiently, and trust in Your plans. May our
+          families continue to grow in faith, kindness, and love. In Jesus'
+          name, Amen. 🤍
+        </div>
+      </section>
+
+      <footer>
+        Created with a grateful heart by James <span>♥</span><br />
+        For Tita, Julie, and the beautiful family God allowed me to meet.
+        <br />May God bless you always. 🙏🏻
+      </footer>
+    </div>
+
+    <div class="lightbox" id="lightbox" onclick="closePhoto()">
+      <button
+        class="close-btn"
+        aria-label="Close photo"
+        onclick="
+          event.stopPropagation();
+          closePhoto();
+        "
+      >
+        ×
+      </button>
+      <img
+        id="largePhoto"
+        src=""
+        alt="Our memory"
+        onclick="event.stopPropagation()"
+      />
+    </div>
+
+    <button
+      class="back-top"
+      aria-label="Back to top"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+    >
+      ↑
+    </button>
+
+    <script>
+      function goToLetter() {
+        document.getElementById("letter").scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+
+      function showBlessing() {
+        const note = document.getElementById("blessing");
+        note.classList.toggle("show");
+
+        if (note.classList.contains("show")) {
+          createHearts(18);
+        }
+      }
+
+      function createHearts(amount = 8) {
+        const layer = document.getElementById("heart-layer");
+        const symbols = ["💗", "💕", "🤍", "✨", "🌸"];
+
+        for (let i = 0; i < amount; i++) {
+          const heart = document.createElement("span");
+          heart.className = "floating-heart";
+          heart.textContent =
+            symbols[Math.floor(Math.random() * symbols.length)];
+
+          heart.style.left = Math.random() * 96 + "vw";
+          heart.style.fontSize = 14 + Math.random() * 18 + "px";
+          heart.style.animationDuration = 3 + Math.random() * 3 + "s";
+
+          layer.appendChild(heart);
+          heart.addEventListener("animationend", () => heart.remove());
+        }
+      }
+
+      function openPhoto(index) {
+        const cards = document.querySelectorAll(".photo-card");
+        const img = cards[index].querySelector("img");
+
+        if (
+          !img ||
+          img.classList.contains("broken") ||
+          !img.complete ||
+          img.naturalWidth === 0
+        ) {
+          alert(
+            "Add your photo to the images folder first. Please check the filename.",
+          );
+          return;
+        }
+
+        document.getElementById("largePhoto").src = img.src;
+        document.getElementById("lightbox").classList.add("show");
+      }
+
+      function closePhoto() {
+        document.getElementById("lightbox").classList.remove("show");
+      }
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") closePhoto();
+      });
+
+      // Occasional little hearts while scrolling or clicking.
+      document.addEventListener("click", function (event) {
+        if (event.target.closest("button, a, .photo-card")) return;
+        createHearts(3);
+      });
+    </script>
+  </body>
+</html>
